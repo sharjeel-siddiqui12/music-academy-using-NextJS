@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +24,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Define your light mode styles here (if needed as a base) */
+body {
+  @apply bg-gray-900 text-white; /* Example light mode defaults */
+}
+
+/* Define your dark mode styles using the .dark class */
+.dark body {
+  @apply bg-gray-900 text-gray-100; /* Example dark mode overrides */
+}
+
+.dark .some-component {
+  @apply bg-gray-800 text-white;
+}
+
+/* You can also define dark mode variants for Tailwind utilities */
+.bg-blue-500 {
+  background-color: #3b82f6; 
+}
+
+.dark .bg-blue-500 {
+  background-color: #1d4ed8;
+}
+
+.text-blue-500 {
+  color: #3b82f6; 
+}
+
+.dark .text-blue-500 {
+  color: #93c5fd; /* Lighter blue text in dark mode */
+}
+
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }
