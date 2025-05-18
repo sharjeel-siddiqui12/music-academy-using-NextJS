@@ -44,7 +44,7 @@ function WhyChooseUs() {
       <p className="mt-4 text-lg text-white text-center max-w-xl mx-auto bg-white/10 rounded-lg p-4 shadow-lg">
         Explore our courses and start your musical journey today!
       </p>
-      <div className="flex flex-col items-center justify-center w-full h-screen">
+      <div className="mt-10">
         <StickyScroll content={musicSchoolContent} />
       </div>
     </div>
