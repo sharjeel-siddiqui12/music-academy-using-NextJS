@@ -17,8 +17,7 @@ interface Params {
   params: { slug: string };
 }
 
-export default async function CoursePage(props: Params) {
-  const { params } = await props;
+export default async function CoursePage({ params }: Params) {
   const course = courseData.courses.find((c: Course) => c.slug === params.slug);
 
   if (!course) {
