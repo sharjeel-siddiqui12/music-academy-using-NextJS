@@ -15,11 +15,12 @@ interface Course {
 }
 
 interface Params {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function CoursePage({ params }: Params) {
-  const course = courseData.courses.find((c: Course) => c.slug === params.slug);
+  const { slug } = await params;
+  const course = courseData.courses.find((c: Course) => c.slug === slug);
 
   if (!course) {
     notFound();
